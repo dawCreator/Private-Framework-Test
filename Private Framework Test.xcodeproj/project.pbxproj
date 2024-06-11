@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8012821E2C190851009512E2 /* MultitouchSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8012821D2C190851009512E2 /* MultitouchSupport.framework */; };
 		80BE1C232C1856E200DEA80C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BE1C222C1856E200DEA80C /* main.m */; };
-		80BE1C2B2C1871A400DEA80C /* workingButUglyMain.m in Sources */ = {isa = PBXBuildFile; fileRef = 80BE1C2A2C1871A400DEA80C /* workingButUglyMain.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,10 +24,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8012821D2C190851009512E2 /* MultitouchSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultitouchSupport.framework; path = ../../../../../System/Library/PrivateFrameworks/MultitouchSupport.framework; sourceTree = "<group>"; };
 		80BE1C1F2C1856E200DEA80C /* Private Framework Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Private Framework Test"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80BE1C222C1856E200DEA80C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		80BE1C292C185B9E00DEA80C /* MultitouchSupport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultitouchSupport.h; sourceTree = "<group>"; };
-		80BE1C2A2C1871A400DEA80C /* workingButUglyMain.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = workingButUglyMain.m; sourceTree = "<group>"; };
 		80BE1C2D2C1872CA00DEA80C /* MultitouchSupport */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; name = MultitouchSupport; path = ../../../../../System/Library/PrivateFrameworks/MultitouchSupport.framework/MultitouchSupport; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -36,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8012821E2C190851009512E2 /* MultitouchSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				80BE1C222C1856E200DEA80C /* main.m */,
-				80BE1C2A2C1871A400DEA80C /* workingButUglyMain.m */,
 				80BE1C292C185B9E00DEA80C /* MultitouchSupport.h */,
 			);
 			path = "Private Framework Test";
@@ -72,6 +72,7 @@
 		80BE1C2C2C1872CA00DEA80C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8012821D2C190851009512E2 /* MultitouchSupport.framework */,
 				80BE1C2D2C1872CA00DEA80C /* MultitouchSupport */,
 			);
 			name = Frameworks;
@@ -134,7 +135,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80BE1C2B2C1871A400DEA80C /* workingButUglyMain.m in Sources */,
 				80BE1C232C1856E200DEA80C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,8 +262,12 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = /System/Library/PrivateFrameworks;
-				OTHER_LDFLAGS = "\"-F/System/Library/PrivateFrameworks -framework MultitouchSupport\"";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 			};
 			name = Debug;
 		};
@@ -272,8 +276,12 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				FRAMEWORK_SEARCH_PATHS = /System/Library/PrivateFrameworks;
-				OTHER_LDFLAGS = "\"-F/System/Library/PrivateFrameworks -framework MultitouchSupport\"";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
+				);
 			};
 			name = Release;
 		};

@@ -5,7 +5,6 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        [NSBundle bundleWithPath:@"/System/Library/PrivateFrameworks/MultitouchSupport.framework"];
     // Call MTDeviceCreateList() To Get List Of Multitouchable Devices
         CFMutableArrayRef deviceList = MTDeviceCreateList();
         
@@ -13,14 +12,14 @@ int main(int argc, const char * argv[]) {
         if (deviceList != NULL) {
         // Get The Number Of Devices
             CFIndex deviceCount = CFArrayGetCount(deviceList);
-            NSLog(@"Found %ld multitouch device(s).", deviceCount);
+            printf("Found %ld multitouch device(s).", deviceCount);
             
             // Do Something With The List…
             
             // Release The List
             CFRelease(deviceList);
         } else {
-            NSLog(@"Failed to create the multitouch device list.");
+            printf("Failed to create the multitouch device list.");
         }
     }
     return 0;
